@@ -1,30 +1,39 @@
-import { Inter as FontSans } from "next/font/google"
+import { Inter as FontSans } from "next/font/google";
 
-import { cn } from "@/lib/utils"
-import './globals.css'
-import { Metadata } from "next"
-import { ClerkProvider } from "@clerk/nextjs"
-import { dark } from "@clerk/themes"
-import Provider from "./Provider"
+import { cn } from "@/lib/utils";
+import "./globals.css";
+import { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
+// import { dark } from "@clerk/themes";
+import Provider from "./Provider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
 export const metadata: Metadata = {
-  title: 'LiveDocs',
-  description: 'Your go-to collaborative editor',
-}
+  title: "Brighting",
+  description:
+    "Unleash Your Inner Author: Write Better, Faster, Smarter with Our AI Writing Assistant.",
+  // icons: {
+  //   icon: ["/public/assets/images/Brighting_Logo_2.png"],
+  // },
+  icons: ["/public/assets/images/Brighting_Logo_2.png"],
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <ClerkProvider
       appearance={{
-        baseTheme: dark,
-        variables: { 
-          colorPrimary: "#3371FF" ,
-          fontSize: '16px'
+        // baseTheme: dark,
+        variables: {
+          // colorPrimary: "#3371FF",
+          // fontSize: "16px",
         },
       }}
     >
@@ -35,11 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             fontSans.variable
           )}
         >
-          <Provider>
-            {children}
-          </Provider>
+          <Provider>{children}</Provider>
         </body>
       </html>
     </ClerkProvider>
-  )
+  );
 }
