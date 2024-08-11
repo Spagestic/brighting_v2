@@ -38,7 +38,10 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="min-w-9 rounded-xl bg-transparent p-2 transition-all">
+        <Button
+          variant={"ghost"}
+          className="min-w-9 rounded-xl bg-transparent p-2 transition-all"
+        >
           <Image
             src="/assets/icons/delete.svg"
             alt="delete"
@@ -50,22 +53,28 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
       </DialogTrigger>
       <DialogContent className="shad-dialog">
         <DialogHeader>
-          <Image
+          {/* <Image
             src="/assets/icons/delete-modal.svg"
             alt="delete"
             width={48}
             height={48}
             className="mb-4"
-          />
-          <DialogTitle>Delete document</DialogTitle>
+          /> */}
+          <DialogTitle className="text-24-semibold text-dark-500">
+            Delete document
+          </DialogTitle>
           <DialogDescription>
             Are you sure you want to delete this document? This action cannot be
             undone.
           </DialogDescription>
         </DialogHeader>
 
-        <DialogFooter className="mt-5">
-          <DialogClose asChild className="w-full bg-dark-400 text-white">
+        <DialogFooter className="mt-1">
+          <DialogClose
+            asChild
+            // className="w-full bg-dark-400 text-white"
+            className="w-full"
+          >
             Cancel
           </DialogClose>
 

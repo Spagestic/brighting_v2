@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@liveblocks/react-ui/styles.css';
-@import '@liveblocks/react-lexical/styles.css';
+@import "@liveblocks/react-ui/styles.css";
+@import "@liveblocks/react-lexical/styles.css";
 
-@import '../styles/dark-theme.css';
+/* @import '../styles/dark-theme.css'; */
+@import "../styles/light-theme.css";
 
 /* ========================================== TAILWIND STYLES */
 @layer base {
   :root {
-    background: #09111f;
-    color: #fff;
+    background: #fff;
+    color: #000;
     margin: 0;
   }
 
@@ -22,7 +23,7 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
-    background: #09090a;
+    background: #fff;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -51,7 +52,9 @@
   }
 
   .shad-dialog {
-    @apply w-full max-w-[400px] rounded-xl border-none bg-doc bg-cover px-5 py-7 shadow-xl sm:min-w-[500px] !important;
+    @apply w-full max-w-[400px] rounded-xl border-none 
+    /* bg-doc bg-cover  */
+    px-5 py-7 shadow-xl sm:min-w-[500px] !important;
   }
 
   .shad-dialog button {
@@ -59,7 +62,8 @@
   }
 
   .shad-select {
-    @apply w-fit border-none bg-transparent text-blue-100 !important;
+    @apply w-fit border-none bg-white text-black rounded-lg 
+     !important;
   }
 
   .shad-select svg {
@@ -67,15 +71,22 @@
   }
 
   .shad-select-item {
-    @apply cursor-pointer bg-dark-200 text-blue-100 focus:bg-dark-300 hover:bg-dark-300 focus:text-blue-100 !important;
+    @apply cursor-pointer 
+    /* bg-dark-200 text-blue-100 focus:bg-dark-300 hover:bg-dark-300 focus:text-blue-100 */
+    bg-white focus:bg-gray-100 hover:bg-gray-100 focus:text-gray-900 hover:text-gray-900
+     !important;
   }
 
   .shad-popover {
-    @apply w-[460px] border-none bg-dark-200 shadow-lg !important;
+    @apply w-[460px] border-none 
+    /* bg-dark-200 */
+     shadow-lg !important;
   }
 
   .floating-toolbar {
-    @apply flex w-full min-w-max items-center justify-center gap-2 rounded-lg bg-dark-350 p-1.5 shadow-xl;
+    @apply flex w-full min-w-max items-center justify-center gap-2 rounded-lg 
+    /* bg-dark-350  */
+    p-1.5 shadow-xl;
   }
 
   .floating-toolbar-btn {
@@ -83,7 +94,9 @@
   }
 
   .toolbar-wrapper {
-    @apply z-50 custom-scrollbar w-screen overflow-auto border-y border-dark-300 bg-dark-100 pl-3 pr-4 shadow-sm;
+    @apply z-50 custom-scrollbar w-screen overflow-auto border-y border-dark-300 
+    /* bg-dark-100  */
+    pl-3 pr-4 shadow-sm;
   }
 
   .editor-wrapper {
@@ -91,7 +104,10 @@
   }
 
   .header {
-    @apply min-h-[92px] min-w-full flex-nowrap bg-dark-100 flex w-full items-center justify-between gap-2 px-4;
+    @apply min-h-[35px] min-w-full flex-nowrap 
+    /* bg-dark-100 */
+     py-3 shadow-sm
+     flex w-full items-center justify-between gap-2 px-4;
   }
 
   .document-list-container {
@@ -103,11 +119,15 @@
   }
 
   .document-list-item {
-    @apply flex items-center justify-between gap-4 rounded-lg bg-doc bg-cover p-5 shadow-xl;
+    @apply flex items-center justify-between gap-4 rounded-lg 
+    /* bg-doc bg-cover */
+     p-5 shadow-xl;
   }
 
   .document-list-empty {
-    @apply flex w-full max-w-[730px] flex-col items-center justify-center gap-5 rounded-lg bg-dark-200 px-10 py-8;
+    @apply flex w-full max-w-[730px] flex-col items-center justify-center gap-5 rounded-lg 
+    /* bg-dark-200 */
+     px-10 py-8;
   }
 
   .document-title-input {
@@ -119,7 +139,10 @@
   }
 
   .view-only-tag {
-    @apply rounded-md bg-dark-400/50 px-2 py-0.5 text-xs text-blue-100/50;
+    @apply rounded-md 
+    /* bg-dark-400/50 */
+     px-2 py-0.5 text-xs 
+     /* text-blue-100/50 */;
   }
 
   .collaborators-list {
@@ -127,7 +150,9 @@
   }
 
   .share-input {
-    @apply h-11 flex-1 border-none bg-dark-400 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply h-11 flex-1 border 
+    /* bg-dark-400 */
+     focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .remove-btn {
@@ -139,11 +164,19 @@
   }
 
   .comment-composer {
-    @apply w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px];
+    @apply w-full max-w-[800px] 
+    /* border  */
+    /* border-dark-300  */
+    /* bg-dark-200 */
+     shadow-sm lg:w-[350px];
   }
 
   .comment-thread {
-    @apply w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px] transition-all;
+    @apply w-full max-w-[800px] 
+    /* border  */
+    /* border-dark-100  */
+    /* bg-dark-200 */
+     shadow-sm lg:w-[350px] transition-all;
   }
 
   .loader {
@@ -184,8 +217,9 @@
 .cl-signIn-start,
 .cl-signUp-start,
 .cl-footer {
-  background: #060d18;
+  background: #fff;
   box-shadow: none;
+  border: none;
   padding: 20px;
 }
 
@@ -206,56 +240,82 @@
 
 .cl-userButtonPopoverMain,
 .cl-userButtonPopoverFooter {
-  background: #0b1527;
+  background: #fff;
+  /* padding: 8px; */
 }
 
 /* ======================== Liveblocks Override */
 .lb-root {
-  --lb-accent-subtle: #0b1527;
+  --lb-accent-subtle: #000;
   --lb-radius: 0px;
-  --lb-dynamic-background: #1b2840;
+  --lb-dynamic-background: #000;
 }
 
-.lb-comment,
-.lb-thread-comments,
-.lb-composer,
+.lb-comment {
+  background: #fff;
+  color: #000;
+  border-radius: 8px;
+  /* box-shadow: #0000001a 0px 2px 4px 0px; */
+}
+.lb-thread-comments {
+  background: #fff;
+  color: #000;
+  border-radius: 8px;
+  /* box-shadow: #0000001a 0px 2px 4px 0px; */
+}
+.lb-composer {
+  /* background-color: #fff; */
+  background: #fff;
+  color: #000;
+  /* border: transparent; */
+  /* border-radius: 12px; */
+  box-shadow: #0000001a 0px 2px 4px 0px;
+}
 .lb-comment-reaction {
-  background-color: #0f1c34;
-  color: #fff;
+  /* background-color: #0f1c34; */
+  background: #fff;
+  background-color: #fff;
+  /* color: #fff; */
+  color: #000;
+  /* border: none; */
+  border-radius: 5px;
+  box-shadow: #0000001a 0px 2px 4px 0px;
 }
 
 .lb-button {
   --lb-foreground-moderate: #fff;
 }
 
-.lb-button:where([data-variant='primary']) {
-  background-color: #161e30;
-  color: #b4c6ee;
+.lb-button:where([data-variant="primary"]) {
+  background-color: #000;
+  color: #fff;
   padding: 8px;
+  border-radius: 4px;
 }
 
 .lb-button:where(
-    [data-variant='default']:not(
+    [data-variant="default"]:not(
         :is(
             :enabled:hover,
             :enabled:focus-visible,
-            [aria-expanded='true'],
-            [aria-selected='true']
+            [aria-expanded="true"],
+            [aria-selected="true"]
           )
       )
   ) {
-  color: #b4c6ee;
+  color: #000;
 }
 
 .lb-button:where(
     :enabled:hover,
     :enabled:focus-visible,
-    [aria-expanded='true'],
-    [aria-selected='true']
+    [aria-expanded="true"],
+    [aria-selected="true"]
   ) {
-  --lb-button-background: #161e30;
-
-  color: #b4c6ee;
+  --lb-button-background: #000;
+  background: #000;
+  border-radius: 8px;
+  color: #fff;
 }
 
 .lb-inbox-notification-list-item:where(:not(:last-of-type)) {
@@ -266,7 +326,7 @@
 .lb-dropdown-item,
 .lb-dropdown-item-icon,
 .lb-composer-editor {
-  color: #fff;
+  color: #000;
 }
 
 .lb-composer-action {
@@ -274,10 +334,11 @@
 }
 
 .lb-comment-content {
-  background: #0b1527;
-  margin-top: 16px;
+  /* background: rgba(0, 0, 0, 0.03); */
+  /* background: #000; */
+  margin-top: 10px;
   padding: 12px;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 14px;
 }
 
@@ -289,20 +350,20 @@
 .lb-emoji-picker-search-icon,
 .lb-emoji-picker-category-header-title,
 .lb-emoji-picker-search::placeholder {
-  color: #b4c6ee;
+  color: #000;
 }
 
 .data-liveblocks-portal {
-  color: #b4c6ee !important;
+  color: #000 !important;
 }
 
 .lb-root:where(:not(.lb-root .lb-root)) {
-  --lb-dynamic-background: #1b2840;
-  color: #fff;
+  --lb-dynamic-background: #fff;
+  color: #000;
 }
 
 .lb-composer-editor :where([data-placeholder]) {
-  color: #b4c6ee;
+  color: #7f8082;
   font-size: 14px;
 }
 
@@ -311,5 +372,5 @@
 }
 
 .lb-elevation {
-  background: #0f1c34;
+  background: #fff;
 }
